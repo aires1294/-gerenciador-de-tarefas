@@ -35,4 +35,10 @@ export class TarefaService {
     });
     localStorage['tarefas'] = JSON.stringify(tarefas);
   }
+
+  remover(id: number): void {
+    let tarefas: Tarefa[] = this.listarTodos();
+    tarefas = tarefas.filter(tarefa => tarefa.id !== id);
+    localStorage['tarefas'] = JSON.stringify(tarefas);
+  }
 }
